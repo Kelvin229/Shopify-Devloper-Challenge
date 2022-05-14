@@ -1,3 +1,5 @@
+<!--Author: Kelvin Odinamadu
+    Shopify Developer intern challenge-->
 <?php
 include 'connect.php';
 if(isset($_POST['submit'])){
@@ -5,13 +7,15 @@ if(isset($_POST['submit'])){
     $email=$_POST['email'];
     $mobile=$_POST['mobile'];
     $password=$_POST['password'];
+    $item=$_POST['item'];
+    $location=$_POST['location'];
+    $priority=$_POST['priority'];
 
-    $sql="insert into `crud` (name, email,mobile,password)
-    values('$name','$email','$mobile','$password')";
+    $sql="insert into `crud` (name, email,mobile,password,item,location,priority)
+    values('$name','$email','$mobile','$password','$item','$location','$priority')";
 
     $result=mysqli_query($con,$sql);
     if($result){
-        // echo "Data inserted successfully";
         header('location:display.php');
     }else{
         die(mysqli_error($con));
@@ -57,6 +61,23 @@ if(isset($_POST['submit'])){
     <label>Password</label>
     <input type="text" class="form-control" placeholder="Enter your password" name="password" autocomplete="off">
   </div>
+  <div class="form-group">
+    <label>Item type</label>
+    <input type="text" class="form-control" placeholder="Enter your inventory item" name="item" autocomplete="off">
+  </div>
+  <div class="form-group">
+    <label>Location</label>
+    <input type="text" class="form-control" placeholder="Enter the shipment location" name="location" autocomplete="off">
+  </div>
+  <div class="form-group">
+    <label>Priority</label><br><br>
+High<input type= "radio" name="priority" value="high"autocomplete="off"/>
+Medium<input type= "radio" name="priority" value="medium"autocomplete="off"/>
+Low<input type= "radio" name="priority" value="low"autocomplete="off"/>
+<br><br>
+</div>
+
+ 
  
   <button type="submit" class="btn btn-primary" name="submit">Submit</button>
 </form>

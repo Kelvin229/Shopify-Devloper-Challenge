@@ -1,3 +1,5 @@
+<!--Author: Kelvin Odinamadu
+    Shopify Developer intern challenge-->
 <?php
 include 'connect.php';
 ?>
@@ -20,6 +22,7 @@ include 'connect.php';
   <div id="title" class="container my-5">
                     <h1>Kelvin Odinamadu</h1>
                     <p>An Inventory Tracking System for Shopify Logistics</p>
+                    
                 </div>
 
   <div class="container">
@@ -32,7 +35,10 @@ include 'connect.php';
         <th scope="col">Email</th>
         <th scope="col">Mobile</th>
         <th scope="col">Password</th>
-        <th scope="col">Operations</th>
+        <th scope="col">Inventory items</th>
+        <th scope="col">Shipment location</th>
+        <th scope="col">Priority</th>
+        <th scope="col">Edit / Delete<th>
     </tr>
   </thead>
   <tbody>
@@ -49,12 +55,18 @@ if ($result) {
         $email = $row['email'];
         $mobile = $row['mobile'];
         $password = $row['password'];
+        $item = $row['item'];
+        $location = $row['location'];
+        $priority= $row['priority'];
         echo ' <tr>
           <th scope="col">' . $id . '</th>
           <th scope="col">' . $name . '</td>
           <th scope="col">' . $email . '</td>
           <th scope="col">' . $mobile . '</td>
           <th scope="col">' . $password . '</td>
+          <th scope="col">' . $item . '</td>
+          <th scope="col">' . $location . '</td>
+          <th scope="col">'  . $priority .'</td>
           <td>
         <button class="btn btn-primary"><a href="update.php?updateid='.$id.'" class="text-light">Edit</a></button>
         <button class="btn btn-danger"><a href="delete.php?deleteid='.$id.'" class="text-light">Delete</a></button>

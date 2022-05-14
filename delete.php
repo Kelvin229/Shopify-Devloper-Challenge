@@ -1,3 +1,5 @@
+<!--Author: Kelvin Odinamadu
+    Shopify Backend Developer Project-->
 <?php
 include 'connect.php';
 if(isset($_GET['deleteid'])){
@@ -7,7 +9,6 @@ if(isset($_GET['deleteid'])){
     $result = mysqli_query($con,$sql);
 
     if($result){
-        // echo "Deleted Successfully";
         header('location:display.php');
     }else{
         die(mysqli_error($con));
