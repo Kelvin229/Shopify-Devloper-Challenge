@@ -1,4 +1,4 @@
-# Shopify-Devloper-Challenge
+# Logistics Tracking Website
 This project was done using both HTML, CSS and PHP
 For this challenge, there are four files in total that contribute to the run of this project.
 
